@@ -216,7 +216,6 @@ public class Artist {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         try {
             Date birthDate = dateFormat.parse(Birthdate);
-            @SuppressWarnings("unused")
 			Date newBirthDate = dateFormat.parse(updatedBirthdate);
 
             if (birthDate.before(dateFormat.parse("01-01-2000"))) {
