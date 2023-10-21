@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.regex.Pattern;
 
+@SuppressWarnings("unused")
 public class Artist {
     private String ID;
     private String Name;
@@ -126,7 +127,7 @@ public class Artist {
     }
 
     private boolean isValidOccupations(ArrayList<String> occupations) {
-        //System.out.println("occupation entry"+ occupations);
+       
     	int noofOccupation = 0; // Initialize the occupation count to zero
 
         // Loop through the occupations and count them
@@ -140,7 +141,6 @@ public class Artist {
                 break;
             }
         }
-        //System.out.println("Validoccupation");
         // Check if there's at least one occupation and at most five
         return noofOccupation > 0 && noofOccupation <= 5;
     }
@@ -284,15 +284,6 @@ public class Artist {
                 // Close the reader and writer
                 buffread.close();
                 buffwrite.close();
-
-                // Rename the temporary file to the original file to apply the update
-                File inputFile = new File(rfilePath);
-                File tempFile = new File(wfilePath);
-                if (tempFile.renameTo(inputFile)) {
-                    return true; // Update successful
-                } else {
-                    System.err.println("Error while updating artist related information.");
-                }
             } catch (IOException e) {
                 System.err.println("Error while updating artist related information: " + e.getMessage());
                 e.printStackTrace();
