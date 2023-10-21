@@ -110,7 +110,7 @@ public class Artist {
         // Split the address using the pipe character '|'
         String[] parts = artistaddr.split("\\|");
 
-        // Check if there are exactly three parts (City, State, Country)
+        // Check if there are exactly three parts (City|State|Country)
         if (parts.length != 3) {
             return false;
         }
